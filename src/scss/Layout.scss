@@ -1,0 +1,21 @@
+.layout-container {
+  ul {
+    @media (min-width: $large-screen-breakpoint) {
+      width: 33.333%;
+    }
+  }
+  li {
+    text-transform: capitalize;
+  }
+  .state-title {
+    text-transform: capitalize;
+  }
+  .list-holder {
+    width: 100%;
+  }
+  .location-container {
+    ul {
+      width: 100%;
+    }
+  }
+}

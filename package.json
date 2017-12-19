@@ -1,0 +1,33 @@
+{
+  "name": "react-static-example-basic",
+  "version": "1.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-static start",
+    "build": "react-static build",
+    "serve": "serve dist -p 3000"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "d3-ease": "^1.0.3",
+    "lodash": "^4.17.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-move": "^2.6.0",
+    "react-router": "^4.2.0",
+    "react-static": "latest",
+    "recompose": "^0.26.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint-config-react-tools": "1.x.x",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "fs": "0.0.1-security",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "serve": "^6.1.0"
+  }
+}
