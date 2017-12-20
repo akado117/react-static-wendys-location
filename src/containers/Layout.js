@@ -1,6 +1,7 @@
 import React from 'react';
 import { getRouteProps, Link } from 'react-static';
 import { splitIntoThreeArrays, buildCityStateProp, buildCityStateStoreNumLink, formateTelephone } from '../helpers/DataHelpers';
+import BreadCrumb from './components/BreadCrumb';
 
 function buildListElement(key, to, text) {
     return <li key={key}><Link to={to} >{text}</Link></li>
@@ -33,6 +34,7 @@ function getCitiesList(splitObj, currentState) {
     const { first, second, third } = splitObj;//city strings
     return (
         <div>
+            <BreadCrumb state={currentState} />
             <h1>Find a Wendy's Restaurant Location in <span className="state-title">{currentState.name ? currentState.name : ''}</span></h1>
             <hr />
             <h2>Browse by City</h2>
@@ -56,14 +58,15 @@ function buildLocationLinkText(location) {
 }
 
 function getLocationsList(locations) {
-    const { stProvNam, cityNam } = locations[0];
+    const { stProvNam, cityNam, stProvCod } = locations[0];
     return (
         <div className="location-container">
+            <BreadCrumb city={cityNam} state={{shortName: stProvCod, lowerCaseShortCode: stProvCod.toLowerCase()}} />
             <h1>Find a Wendy's Restaurant Location in <span className="state-title">{cityNam.toLowerCase()}, {stProvNam.toLowerCase()}</span>
             </h1>
             <hr />
             <h2>{cityNam} Locations</h2>
-            <div className="row locations-list">
+            <div className="locations-list">
                 <ul className="col-xs-12">
                     {locations.map(location => <li key={location.siteNum}><Link
                         to={`/location/${buildCityStateStoreNumLink(location)}`} >{buildLocationLinkText(location)}</Link></li>)}

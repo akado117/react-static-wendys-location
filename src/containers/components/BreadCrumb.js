@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-static';
-import {Link} from "@types/react-router-dom/index.d";
+import { buildCityStateProp } from '../../helpers/DataHelpers'
 
-function BreadCrumb({city, state, store}) {
-    const base = city || state || store ? <Link to="/">LOCATIONS</Link> : '';
-    const stateLink = state ? <span> / <Link to={`/${state}`}>{state}</Link></span> : '';
-    const cityLink = city ? <span> / <Link to={`/${city.replace(' ', '-')}-${state}`} >{city}</Link></span> : '';
-    const storeLink = store ? <span> / <Link to={`/${city.replace(' ', '-')}-${state}-${store.number}`} >{`Wendy's - ${store.address}`}</Link></span> : '';
+function BreadCrumb(props) {
+    const { location } = props;
+    const state = props.state || location && { shortName: location.stProvCod, lowerCaseShortCode: location.stProvCod.toLowerCase() } || undefined
+    const city = props.city || location && location.cityNam;
+
+    const base = <Link to="/">LOCATIONS</Link>;
+    const stateLink = state ? <span> / <Link to={`/state/${state.lowerCaseShortCode}`}>{state.shortName}</Link></span> : '';
+    const cityLink = city ? <span> / <Link to={`/city/${buildCityStateProp({cityNam: city, stProvCod: state.shortName })}`} >{city}</Link></span> : '';
+    const storeLink = location ? <span> / WENDY'S - {location.siteAdr1}</span> : '';
     return (
         <div className="bread-crumb">
             {base}
@@ -16,3 +20,5 @@ function BreadCrumb({city, state, store}) {
         </div>
     );
 }
+
+export default BreadCrumb

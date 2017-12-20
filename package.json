@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "common-web": "git+http://gitlab.central.hq.internal/wms/common-web.git#0a06af965244c05f3e3ce65072d0892c51b9da18",
     "d3-ease": "^1.0.3",
     "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-google-maps": "^9.4.3",
     "react-move": "^2.6.0",
     "react-router": "^4.2.0",
     "react-static": "latest",

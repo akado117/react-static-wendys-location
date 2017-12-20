@@ -4,18 +4,91 @@ $large-screen-breakpoint: 850px;
 $primary-color: #108db8;
 $sans-serif-font: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
   'Lucida Grande', sans-serif;
+$wen-dark-brown-text: #3E2723;
+$wen-light-brown-text: #6e4d40;
+$wen-light-brown-hr: #c5b3af;
+$wen-light-blue: #04A3DD;
+$font-face-base: '/css/fonts';
+
+$font-semibold: 500;
+
+@font-face {
+  font-family: "Intro";
+  font-weight: bold;
+  font-style: italic;
+  src: url("#{$font-face-base}/IntroBoldItalic.eot");
+  src: url("#{$font-face-base}/IntroBoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'NeutrafaceText-Bold_Alt';
+  font-weight: normal;
+  font-style: normal;
+  src: url('#{$font-face-base}/NeutrafaceText-Bold_Alt.eot');
+  src: url('#{$font-face-base}/NeutrafaceText-Bold_Alt.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NeutrafaceText-Book_Alt';
+  font-weight: normal;
+  font-style: normal;
+  src: url('#{$font-face-base}/NeutrafaceText-Book_Alt.eot');
+  src: url('#{$font-face-base}/NeutrafaceText-Book_Alt.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Intro';
+  font-weight: normal;
+  src: url('#{$font-face-base}/IntroRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Intro';
+  font-weight: normal;
+  src: url('#{$font-face-base}/IntroRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Intro';
+  font-style: italic;
+  src: url('#{$font-face-base}/IntroRegularItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Intro';
+  font-weight: $font-semibold;
+  src: url('#{$font-face-base}/IntroSemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Intro';
+  font-weight: bold;
+  src: url('#{$font-face-base}/IntroBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Intro Black';
+  src: url('#{$font-face-base}/IntroBlack.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Intro Black Inline Caps';
+  src: url('#{$font-face-base}/IntroBlackInlineCaps.otf') format('opentype');
+}
 
 body {
-  font-family: $sans-serif-font;
-  font-weight: 300;
+  font-family: 'Intro';
+  font-weight: normal;
   font-size: 16px;
+  line-height: 1.42857143;
   margin: 0;
   padding: 0;
+  background-color: #EFEBE9;
 }
 
 a {
   text-decoration: none;
-  color: $primary-color;
+  color: $wen-light-blue;
   font-weight: bold;
 }
 
@@ -34,7 +107,38 @@ nav {
   }
 }
 
+ul, ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 22px;
+  margin-bottom: 11px;
+  line-height: 1.1;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ffffff;
+  color: $wen-light-brown-hr;
+  height: 2px;
+  margin: 1.133rem 0;
+  background-color: $wen-light-brown-hr;
+  border-color: $wen-light-brown-hr;
+}
+
 .content {
+  min-height: 70vh;
 }
 
 @import './Layout.scss';
+@import './Header.scss';
+@import './Footer.scss';
+@import './LocationPage.scss';
+@import './BreadCrumb.scss';

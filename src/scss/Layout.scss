@@ -1,4 +1,5 @@
 .layout-container {
+  min-height: 70vh;
   ul {
     @media (min-width: $large-screen-breakpoint) {
       width: 33.333%;

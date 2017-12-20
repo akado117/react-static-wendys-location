@@ -64,7 +64,7 @@ export function transformGetAllStoresResponse(stores) {
     };
     console.log(stores[0])
     stores.forEach((store, idx) => {
-        //if (idx > 500) return;
+        //if (idx > 200) return;
         const lwrCsProvCode = store.stProvCod.toLowerCase();
         if (returnData.states.shortName.indexOf(store.stProvCod) === -1) { //add shortcode and name to state array if not already there
             returnData.states.shortName.push(store.stProvCod);

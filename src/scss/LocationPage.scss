@@ -1,0 +1,72 @@
+.location-page {
+  .address {
+    text-transform: capitalize;
+    .street-address-1 {
+      color: $wen-dark-brown-text;
+      font-weight: bold;
+      font-size: 1.167rem;
+    }
+    .phone {
+      a {
+        color: $wen-light-blue;
+        font-weight: 300;
+      }
+    }
+
+  }
+  .hours {
+    color: $wen-light-brown-text;
+    margin-top: 0.875rem;
+    font-size: 14px;
+    span {
+      width: 62%;
+      padding-right: 2%;
+    }
+    .day {
+      display: inline-block;
+      padding-right: 2%;
+      width: 35%;
+    }
+    li:nth-child(3){
+      font-weight: bold;
+    }
+  }
+
+  .directions-link {
+    color: $wen-light-blue;
+    font-size: 1.5rem;
+  }
+
+  .services {
+    background-color: #c5b3af;
+    margin: 0.750rem 0 1.5rem;
+    max-width: 345px;
+    padding: 0.75rem 0.75rem 0.25rem;
+    font-weight: bold;
+    color: $wen-light-brown-text;
+    display: inline-block;
+    .icon {
+      height: 30px;
+      width: 30px;
+    }
+    .serv-text {
+      padding-left: .5rem;
+      display: table-cell;
+      font-size: 0.938rem;
+      font-weight: 600;
+      line-height: 1rem;
+      text-rendering: optimizeLegibility;
+      vertical-align: middle;
+      max-width: 75%;
+
+    }
+    li {
+      float: left;
+      display: flex;
+      align-items: center;
+      height: 2.75rem;
+      position: relative;
+      width: 50%;
+    }
+  }
+}
